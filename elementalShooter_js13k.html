@@ -1,0 +1,128 @@
+<body style=margin:0 onload=INIT()>
+<canvas id=A>
+
+<script>
+
+function INIT(){
+	U=Q=Math.cos;
+	for($ in C=(B=A.cloneNode())[G='getContext'](D='2d'))C[$[J=X=Y=0]+($[6]||'')]=C[$]; // canvas buffer, for better perf
+	R(); // to remove if space is needed
+	F(s=P=p=O=o=0); // S=o=16 if space is needed
+	//setInterval(F,o=0) // to add if space is needed
+}
+
+function F(T){
+	//T=Date.now();
+	d=T-o; // framerate independance, to remove if space is needed
+	o=T;
+	console.log(d)
+	//R(); // to add if space is needed
+
+	// logic here
+
+	b=C[l='fillStyle']='#000'; // to remove if space is needed
+	L=H*.9
+	C.fc(0,0,W,U?H:L); // to remove if space is needed
+	if(U){
+		for(a=['c20','abc','25c','842'],i=4;i--;C.fc(c,p%4==i?L:H*.97,v,H)){
+			g=C.cL(c=W-(i+1)*(v=W*.1),0,c+v,0);g.q=g.addColorStop;g.q(0,b);g.q(.5,'#'+a[i]);g.q(1,b);C[l]=g
+		}
+		C.font=h*2+'px arial';
+		C[l]='tan';
+		C.fx(s,0,H)
+	}
+	//for(a=['c20','842','25c','abc'],i=4;i--;C.fc(W-(i+1)*W*.16,H*(p%4==i?.9:.95),W*.1,H))C[l]='#'+a[i];
+	
+
+	for(X=w;X--;)for(Y=h;Y--;C.fc(X*S+(N=4-(M=Math.random()*S)/2),Y*S+N,M,M))C[l]='#0a9';
+	A[G](D).drawImage(B,U=0,0);
+	requestAnimationFrame(F);
+}
+
+onmousedown=function(){
+	P=1
+}
+
+onmouseup=function(){
+	p+=U=1;
+	P=0
+}
+
+onmousemove=function(_){
+	K=(x=_.clientX)-O;
+	O=x
+}
+
+onkeydown=function(_){
+	K=-((k=_.keyCode)==37)||k==39|0; // arrow keys buttons
+	P=k==32 // space button
+}
+
+onkeyup=function(_){
+	p+=U=!(P=_.keyCode!=32)
+}
+
+onresize=R; // to remove if space is needed
+
+function R(){
+	U=w=(W=A.width=B.width=innerWidth)/(S=16)|0;
+	h=(H=A.height=B.height=innerHeight)/S*.9|0
+}
+
+</script>
+
+
+<!-- variables :
+
+	A : canvas
+	B : canvas buffer
+	C : context du buffer
+	D : string '2d'
+	E : number "elemental bullet"
+	F : 
+	G : string 'getContext'
+	H : window innerHeight
+	I :
+	J :
+	K : horizontal ship direction
+	L : number, game screen / hud limit
+	M :
+	O : old mouse position X
+	P : number, 0 or +, use of the attack power
+	Q : function Math.cos()
+	R : function onresize()
+	S : size of a rect ("pixel")
+	T : number "time"
+	U : boolean, true if HUD have to be update
+	V :
+	W : window innerWidth
+	X :
+	Y : 
+	Z :
+	a : array of elements colors
+	b : string, black color '#000'
+	c :
+	d : delta time between 2 frames
+	e :
+	f :
+	g :
+	h : number of Y iterations
+	i : number for loops
+	j :
+	k : keyboard keyCode
+	l : string 'fillStyle'
+	m :
+	n :
+	o : "old" time, to calulate delta time between 2 frames
+	p : number of used elemental power
+	q :
+	r : string 'fillRect'
+	s : number, score
+	t :
+	u :
+	v :
+	w : number of X iterations
+	x : actual mouse position X
+	y :
+	z :
+-->
