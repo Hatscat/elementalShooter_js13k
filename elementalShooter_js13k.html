@@ -5,7 +5,11 @@
 
 function INIT(){
 	U=Q=Math.cos;
-	for($ in C=(B=A.cloneNode())[G='getContext'](D='2d'))C[$[J=X=Y=0]+($[6]||'')]=C[$]; // canvas buffer, for better perf
+	for($ in C=(B=A.cloneNode())[G='getContext'](D='2d'))C[$[0]+($[6]||'')]=C[$]; // canvas buffer, for better perf
+
+	e=[];
+	e[0]={x:9,y:9,z:9,r:9,p:5,v:1}; // in example, for tests
+
 	R(); // to remove if space is needed
 	F(s=P=p=O=o=0); // S=o=16 if space is needed
 	//setInterval(F,o=0) // to add if space is needed
@@ -20,6 +24,7 @@ function F(T){
 
 	// logic here
 
+
 	b=C[l='fillStyle']='#000'; // to remove if space is needed
 	L=H*.9
 	C.fc(0,0,W,U?H:L); // to remove if space is needed
@@ -32,11 +37,11 @@ function F(T){
 		C.fx(s,0,H)
 	}
 	//for(a=['c20','842','25c','abc'],i=4;i--;C.fc(W-(i+1)*W*.16,H*(p%4==i?.9:.95),W*.1,H))C[l]='#'+a[i];
-	
 
-	for(X=w;X--;)for(Y=h;Y--;C.fc(X*S+(N=4-(M=Math.random()*S)/2),Y*S+N,M,M))C[l]='#0a9';
+	for(n=w*h;n--;C.fc((X=n%w)*S+(N=4-(M=Math.random()*S)/2),(Y=n/w|0)*S+N,M,M)){for(i=w;i--;);C[l]='#0a9'}
+	//for(X=w;X--;)for(Y=h;Y--;C.fc(X*S+(N=4-(M=Math.random()*S)/2),Y*S+N,M,M))C[l]='#0a9';
 	A[G](D).drawImage(B,U=0,0);
-	requestAnimationFrame(F);
+	requestAnimationFrame(F)
 }
 
 onmousedown=function(){
@@ -45,12 +50,15 @@ onmousedown=function(){
 
 onmouseup=function(){
 	p+=U=1;
-	P=0
+	A.f=A['r'+(r='equestFullscreen')]||A.mozRequestFullScreen||A['webkitR'+r];
+	A.p=A['r'+(r='equestPointerLock')]||A['mozR'+r]||A['webkitR'+r];
+	P=A.f();
+	A.p()
 }
 
 onmousemove=function(_){
-	K=(x=_.clientX)-O;
-	O=x
+	K=(u=_.clientX)-O;
+	O=u
 }
 
 onkeydown=function(_){
@@ -96,14 +104,14 @@ function R(){
 	U : boolean, true if HUD have to be update
 	V :
 	W : window innerWidth
-	X :
-	Y : 
-	Z :
+	X : X rect pixel
+	Y : Y rect pixel
+	Z : 
 	a : array of elements colors
 	b : string, black color '#000'
 	c :
 	d : delta time between 2 frames
-	e :
+	e : enemy
 	f :
 	g :
 	h : number of Y iterations
@@ -112,17 +120,17 @@ function R(){
 	k : keyboard keyCode
 	l : string 'fillStyle'
 	m :
-	n :
+	n : rect pixel number
 	o : "old" time, to calulate delta time between 2 frames
 	p : number of used elemental power
 	q :
-	r : string 'fillRect'
+	r : string 'requestFullscreen'
 	s : number, score
 	t :
-	u :
-	v :
+	u : actual mouse position x
+	v : number, W*.1
 	w : number of X iterations
-	x : actual mouse position X
-	y :
-	z :
+	x : x position of the player ship
+	y : y position of the player ship
+	z : z position of the player ship
 -->
