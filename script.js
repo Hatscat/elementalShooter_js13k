@@ -42,7 +42,7 @@ function F(T){
 		dy=ry/q; // ray vector normalized
 		dt=dm=3e3;
 		for(i=w;i--;){
-			j=J([][]);
+			j=J([12][]);
 			rx+=dx*1;
 			ry+=dy*1;
 			rz+=dz*1;

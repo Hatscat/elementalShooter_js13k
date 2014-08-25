@@ -4,9 +4,9 @@ module.exports = function(grunt) {
     connect: {
       server : {
         options: {
-          port: 9000,
+          port: 9001,
           hostname: 'localhost',
-          livereload: true,
+          livereload: 3333,
           open: true
         }
       }
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         files: ['*.js'],
         tasks: ['uglify'],
         options: {
-          livereload: true
+          livereload: 3333
         },
       },
     },
