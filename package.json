@@ -1,0 +1,21 @@
+{
+  "name": "elementalShooter_js13k",
+  "version": "0.0.0",
+  "description": "elementalShooter_js13k ======================",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hatscat/elementalShooter_js13k.git"
+  },
+  "author": "Lucien Boudy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hatscat/elementalShooter_js13k/issues"
+  },
+  "homepage": "https://github.com/Hatscat/elementalShooter_js13k",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
