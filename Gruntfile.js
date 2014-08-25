@@ -6,29 +6,42 @@ module.exports = function(grunt) {
         options: {
           port: 9001,
           hostname: 'localhost',
-          livereload: 3333,
           open: true
         }
       }
     },
     watch: {
       scripts: {
-        files: ['*.js'],
-        tasks: ['uglify'],
+        files: ['script.js'],
+        tasks: ['uglify', 'jscrush'],
         options: {
           livereload: 3333
         },
       },
     },
-    uglify: {
+    jscrush: {
+      options: {
+      },
       dist: {
         files: {
-          'out.min.js': ['script.js']
+          'out.crush.js': ['script.js']
+        }
+      },
+    },
+    uglify: {
+      options: {
+        compress: true,
+        mangle: true
+      },
+      dist: {
+        files: {
+          'out.uglify.js': ['script.js']
         }
       }
     }
   });
 
+  grunt.loadNpmTasks('grunt-jscrush');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
